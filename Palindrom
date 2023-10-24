@@ -1,0 +1,38 @@
+#include "iostream"
+
+void reverse(int n, int& a)
+{
+   
+    if (n == 0) {
+        return;
+    }
+
+    a = a * 10 + (n % 10);
+    reverse(n / 10, a);
+}
+
+
+int isPalindrome(int num)
+{
+    int a = 0;
+
+   
+    reverse(num, a);
+
+   
+    return (num == a);
+}
+
+int main()
+{
+    int n = 12212;
+
+    if (isPalindrome(n)) {
+        printf("true");
+    }
+    else {
+        printf("false");
+    }
+
+    return 0;
+}
